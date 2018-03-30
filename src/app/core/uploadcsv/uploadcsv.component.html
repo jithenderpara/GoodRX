@@ -1,3 +1,10 @@
 <p>
   uploadcsv works!
 </p>
+
+<ngx-datatable class='material striped orderView' [rows]='Myarray' [columnMode]="'force'"
+ [headerHeight]="50" [footerHeight]="0"
+  [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true">
+  <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
+  <ngx-datatable-column name="ID" prop="id"></ngx-datatable-column>
+</ngx-datatable>

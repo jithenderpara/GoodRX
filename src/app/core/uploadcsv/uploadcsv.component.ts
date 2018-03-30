@@ -11,5 +11,9 @@ export class UploadcsvComponent implements OnInit {
 
   ngOnInit() {
   }
+  public Myarray: any = [
+    { "name": "jithender", "id": 0 },
+    { "name": "Raj", "id": 1 }
+  ]
 
 }

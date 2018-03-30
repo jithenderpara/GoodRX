@@ -3,18 +3,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
-import { UploadcsvComponent } from './core/uploadcsv/uploadcsv.component';
+import { UploadcsvModule } from './core/uploadcsv/uploadcsv.module';
+import { UploadComponent } from './core/upload/upload.component';
 const Route = [
-  { path: 'upload', component: UploadcsvComponent }
+  { path: 'upload', component: UploadComponent }
 ]
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    UploadcsvComponent
+    UploadComponent
   ],
   imports: [
     BrowserModule,
+    UploadcsvModule,
     RouterModule.forRoot(Route)
   ],
   providers: [],
