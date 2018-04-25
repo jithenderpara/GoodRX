@@ -1,0 +1,52 @@
+<div class="row">
+  <form  [formGroup]="Scheduling" (ngSubmit)="scheduleForm(Scheduling.value)">  
+      <div class="col-sm-6">
+          <h3>Job Scheduling </h3>    
+          <div class="form-group" [class.has-error]="!Scheduling.controls['jobname'].valid && Scheduling.controls['jobname'].touched">
+            <div class="input-group">
+              <span class="input-group-addon">Job Name</span>
+              <input formControlName="jobname" id="jobname" type="text" class="form-control" name="jobname">
+              <!-- <div class="alert" *ngIf="!Scheduling.controls['jobname'].valid && Scheduling.controls['jobname'].touched ">This is Required</div> -->
+            </div>
+          </div> 
+          <div class="form-group" [class.has-error]="!Scheduling.controls['jobdate'].valid && Scheduling.controls['jobdate'].touched"> 
+            <div class="input-group">
+              <span class="input-group-addon">Job Date</span>
+              <input formControlName="jobdate" id="jobdate" type="text" class="form-control" name="jobdate">
+            </div>            
+          </div>
+          <div class="form-group" [class.has-error]="!Scheduling.controls['jobtime'].valid && Scheduling.controls['jobtime'].touched">
+            <div class="input-group">
+              <span class="input-group-addon">Job Time</span>
+              <input formControlName="jobtime" id="jobtime" type="text" class="form-control" name="jobtime">
+               <!-- <div class="alert" *ngIf="!Scheduling.controls['jobtime'].valid && Scheduling.controls['jobtime'].touched ">This is Required</div> -->
+            </div>
+          </div>    
+          <div class="form-group" [class.has-error]="!Scheduling.controls['NoofRecods'].valid && Scheduling.controls['NoofRecods'].touched">
+            <div class="input-group">
+              <span class="input-group-addon">No of Recods at a time</span>
+              <input formControlName="NoofRecods" id="NoofRecods" type="text" class="form-control" name="NoofRecods">
+               <!-- <div class="alert" *ngIf="!Scheduling.controls['NoofRecods'].valid && Scheduling.controls['NoofRecods'].touched ">This is Required</div> -->
+            </div>
+          </div>  
+          <div class="form-group" [class.has-error]="!Scheduling.controls['mailids'].valid && Scheduling.controls['mailids'].touched">
+            <div class="input-group">
+              <span class="input-group-addon">Mail Id's</span>
+              <input formControlName="mailids" id="mailids" type="text" class="form-control" name="mailids">
+               <!-- <div class="alert" *ngIf="!Scheduling.controls['mailids'].valid && Scheduling.controls['mailids'].touched ">This is Required</div> -->
+            </div>
+          </div>    
+          <button type="submit" class="btn btn-primary" [disabled]="!Scheduling.valid">Submit</button> 
+      </div>
+  </form>
+</div>
+    <!-- <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3> 
+      <p>Lorem ipsum dolor..</p>
+      <p>Ut enim ad..</p>
+    </div> -->

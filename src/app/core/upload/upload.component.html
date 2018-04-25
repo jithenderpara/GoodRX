@@ -1,1 +1,13 @@
-<app-uploadcsv></app-uploadcsv>
+<h2>File Upload</h2>
+<!-- <h3><i>FormControl in a FormGroup</i></h3> -->
+<form [formGroup]="heroForm">
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name" type="file">
+    </label>
+  </div>
+ <button type="submit"
+            [disabled]="uploadForm.pristine" class="btn btn-success">Save</button> &nbsp;
+</form>
+<!-- <p>Form value: {{ uploadForm.value | json }}</p>
+<p>Form status: {{ uploadForm.status | json }}</p> -->
