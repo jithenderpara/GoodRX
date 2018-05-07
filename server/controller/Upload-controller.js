@@ -3,8 +3,11 @@ function restapi(router,bodyParser) {
     self.handleRoutes(router, bodyParser);
 }
 restapi.prototype.handleRoutes = function (router, bodyParser) {
-    router.post('/api/uploadFile', function (req, res) {
-        res.send("Sending file")
+    var multer  = require('multer')
+    var upload = multer({ dest: 'uploads/' })
+    router.post('/uploadFile', upload.single('uploadFile'), function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
     })
 }
 

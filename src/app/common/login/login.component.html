@@ -1,0 +1,21 @@
+<div class="row">
+  <form  [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)">  
+      <div class="col-sm-6">
+          <h3>Login Here</h3>    
+          <div class="form-group" [class.has-error]="!loginForm.controls['emailid'].valid && loginForm.controls['emailid'].touched">
+            <div class="input-group">
+              <span class="input-group-addon">Email</span>
+              <input formControlName="emailid" id="emailid" type="text" class="form-control" name="emailid">
+              <!-- <div class="alert" *ngIf="!Scheduling.controls['jobname'].valid && Scheduling.controls['jobname'].touched ">This is Required</div> -->
+            </div>
+          </div> 
+          <div class="form-group" [class.has-error]="!loginForm.controls['password'].valid && loginForm.controls['password'].touched"> 
+            <div class="input-group">
+              <span class="input-group-addon">Password</span>
+                <input formControlName="password" id="password" type="text" class="form-control" name="password">
+            </div>            
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button> 
+      </div>
+  </form>
+</div>

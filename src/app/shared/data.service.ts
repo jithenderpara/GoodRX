@@ -17,6 +17,7 @@ export class DataService {
     return this._http.get(this._rootpath + url).map((data: Response) => data.json());
   }
   postmethod(url, params) {
+    console.log(params)
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
     return this._http.post(this._rootpath + url, JSON.stringify(params), options)

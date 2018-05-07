@@ -11,14 +11,22 @@
           </div> 
           <div class="form-group" [class.has-error]="!Scheduling.controls['jobdate'].valid && Scheduling.controls['jobdate'].touched"> 
             <div class="input-group">
-              <span class="input-group-addon">Job Date</span>
-              <input formControlName="jobdate" id="jobdate" type="text" class="form-control" name="jobdate">
+              <span class="input-group-addon">One Day of the Month</span>
+              <select formControlName="jobdate" id="jobdate" class="form-control" name="jobdate">
+                  <option value='' selected>--select--</option>
+                  <option *ngFor="let day of days" value="{{day}}">{{day}}</option>
+              </select>
+              <!-- <input formControlName="jobdate" id="jobdate" type="text" class="form-control" name="jobdate"> -->
             </div>            
           </div>
           <div class="form-group" [class.has-error]="!Scheduling.controls['jobtime'].valid && Scheduling.controls['jobtime'].touched">
             <div class="input-group">
               <span class="input-group-addon">Job Time</span>
-              <input formControlName="jobtime" id="jobtime" type="text" class="form-control" name="jobtime">
+              <select formControlName="jobtime" id="jobtime" class="form-control" name="jobdate">
+                <option value='' selected>--select--</option>
+                <option *ngFor="let time of Timeing" value="{{time.value}}">{{time.text}}</option>
+              </select>
+              <!-- <input formControlName="jobtime" id="jobtime" type="text" class="form-control" name="jobtime"> -->
                <!-- <div class="alert" *ngIf="!Scheduling.controls['jobtime'].valid && Scheduling.controls['jobtime'].touched ">This is Required</div> -->
             </div>
           </div>    
@@ -35,7 +43,14 @@
               <input formControlName="mailids" id="mailids" type="text" class="form-control" name="mailids">
                <!-- <div class="alert" *ngIf="!Scheduling.controls['mailids'].valid && Scheduling.controls['mailids'].touched ">This is Required</div> -->
             </div>
-          </div>    
+          </div>   
+          <div class="form-group" [class.has-error]="!Scheduling.controls['filepath'].valid && Scheduling.controls['mailids'].touched">
+            <div class="input-group">
+              <span class="input-group-addon">Output File Path</span>
+              <input formControlName="filepath" id="filepath" type="text" class="form-control" name="filepath">
+               <!-- <div class="alert" *ngIf="!Scheduling.controls['mailids'].valid && Scheduling.controls['mailids'].touched ">This is Required</div> -->
+            </div>
+          </div>  
           <button type="submit" class="btn btn-primary" [disabled]="!Scheduling.valid">Submit</button> 
       </div>
   </form>
