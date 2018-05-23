@@ -1,0 +1,5 @@
+Lite Version(Y/N),N,,,,,,
+Output File Location,CouponIntelligence\Output-01102018-1105.csv,,,,,,
+Drug Name (url/lipitor),Drug Name (?drug-name=lipitor),Form,Dosage,Quantity,Days Supply,Label Override,Location
+cefprozil,,tablet,250mg,10,,CEFPROZIL,60614
+trazodone,,tablet,50mg,30,,trazodone,60614
